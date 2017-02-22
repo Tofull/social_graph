@@ -1,5 +1,5 @@
 # Social Graph
-Afficher le graphe social d'un site de petites annonces via leurs relations sur les rÃ©seaux sociaux types twitter, linkedin, ... 
+Afficher le graphe social d'un site de petites annonces via leurs relations sur les réseaux sociaux types twitter, linkedin, ... 
 
 ## Objectif : 
 Il s'agit d'identifier les relations dans un graphe des offreurs et des demandeurs d'un même marché et d'établir des liens pertinents entre eux.
