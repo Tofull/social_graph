@@ -1,4 +1,5 @@
 ## Exemples
+You can try our examples on [the neo4j amazing console](http://console.neo4j.org/). Just copy-paste our examples on it.
 ### Create the graph
 ```
 create (facebook:Social {nom:"facebook"})
