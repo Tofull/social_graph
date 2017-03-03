@@ -9,11 +9,11 @@ xte "keydown Control_L" "key Return" "keyup Control_L"
 # 'mouseclick 1'
 while IFS='' read -r line || [[ -n "$line" ]]; do
     echo "$line" | xclip -selection clipboard
-    sleep 0.05
+    sleep 0.1
     # Paste Text
     xte "keydown Control_L" "key v" "keyup Control_L"
     # execute command
-    xte "keydown Control_L" "key Return" "keyup Control_L"
-    # wait 50 ms
-    sleep 0.05
+    xte "sleep 0.1" "keydown Control_L" "key Return" "keyup Control_L"
+    # wait 100 ms
+    sleep 0.1
 done < "$1"

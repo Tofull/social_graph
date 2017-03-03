@@ -18,7 +18,7 @@ frame = pd.concat(list_)
 #     print(row[1], row[2])
 
 # nameUsers = pd.concat([frame[frame.columns[1]] + frame[frame.columns[2]] ])
-nameUsersJoin = pd.concat([frame[frame.columns[1]] + frame[frame.columns[2]] ])
+nameUsersJoin = frame[frame.columns[1]].append(frame[frame.columns[2]]).reset_index(drop=True)
 nameUsers = nameUsersJoin.unique()
 print(nameUsers)
 
@@ -37,11 +37,11 @@ for user in nameUsers:
     fh.write("create (`"+user+"`:Personne {nom:\""+user+"\"})\n")
 fh.write("\n\n\n")
 
-for index, row in df.iterrows():
+for index, row in frame.iterrows():
     network = row[0]
     personne1 = row[1]
     personne2 = row[2]
-    fh.write("match (n:Personne),(m) where n.nom=\""+personne1+"\" and m.nom=\""+personne2+"\" create (n)-[:KNOWS]->(m)\n")
+    fh.write("match (n:Personne),(m:Personne) where n.nom=\""+personne1+"\" and m.nom=\""+personne2+"\" create (n)-[:KNOWS]->(m)\n")
 fh.write("\n\n\n")
 #### Close the file
 fh.close()

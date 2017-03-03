@@ -54,3 +54,8 @@ execute the following script
 ./exportToNeo4j.sh hello.txt
 ```
 Be patient
+Toggle again the visualisation
+
+#### Result with facebook
+You should get a graph like :
+![Facebook graph](../Rendu/images/graphFacebook.png)
