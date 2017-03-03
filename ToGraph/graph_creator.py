@@ -41,7 +41,7 @@ for index, row in df.iterrows():
     network = row[0]
     personne1 = row[1]
     personne2 = row[2]
-    fh.write("MATCH (personne1:Personne {nom:\""+personne1+"\"}), (personne2:Personne {nom:\""+personne2+"\"}) CREATE (personne1)-[:KNOWS]->(personne2);\n")
+    fh.write("match (n:Personne),(m) where n.nom=\""+personne1+"\" and m.nom=\""+personne2+"\" create (n)-[:KNOWS]->(m)\n")
 fh.write("\n\n\n")
 #### Close the file
 fh.close()

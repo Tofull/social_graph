@@ -34,7 +34,7 @@ Will generate a hello.txt file containing each single command to launch on neo4j
 
 ### To use the online console neo4j
 #### Method 1 : manual
-Paste manually the content of each file in outputNeo4jConsole. Execute the query before paste another file. (StackOverFlow error otherwise because of the quantity of data...)
+Paste manually the content of each file in outputNeo4jConsole. Execute the query before paste another file. (StackOverFlow error otherwise because of the quantity of data...). This method does not work with the queries of matching. You have to copy-paste one by one (very long)
 
 #### Method 2 : automatically
 Open a terminal in social_graph/ToGraph folder.
@@ -43,6 +43,7 @@ Configure the script
 chmod +x exportToNeo4j.sh
 ```
 Open the console neo4j in a tab on your webbrowser.
+Toggle visualisation
 Clean the default database by pressing the clean button
 Select the text of the query tab
 At this moment, do not use your mouse anymore
@@ -52,4 +53,4 @@ execute the following script
 ```
 ./exportToNeo4j.sh hello.txt
 ```
-Be patient 
+Be patient
