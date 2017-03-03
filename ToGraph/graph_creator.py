@@ -43,6 +43,22 @@ for index, row in frame.iterrows():
     personne2 = row[2]
     fh.write("match (n:Personne),(m:Personne) where n.nom=\""+personne1+"\" and m.nom=\""+personne2+"\" create (n)-[:KNOWS]->(m)\n")
 fh.write("\n\n\n")
+
+
+
+# print(pd.unique(frame[[frame.columns[1], frame.columns[2]]].values.ravel()))
+grouped = frame.groupby(frame.columns[0])
+
+for name, group in grouped:
+    # print(name + " : " + group)
+    nameGroupUsersJoin = group[group.columns[1]].append(group[group.columns[2]]).reset_index(drop=True)
+    nameGroupUsers = nameGroupUsersJoin.unique()
+
+    for user in nameGroupUsers:
+        fh.write("match (n:Personne),(m:Social) where n.nom=\""+user+"\" and m.nom=\""+name+"\" create (n)-[:SIGNIN]->(m)\n")
+
+    fh.write("\n\n\n")
+
 #### Close the file
 fh.close()
 
