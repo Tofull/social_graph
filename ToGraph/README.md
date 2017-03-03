@@ -59,3 +59,7 @@ Toggle again the visualisation
 #### Result with facebook
 You should get a graph like :
 ![Facebook graph](../Rendu/images/graphFacebook.png)
+
+#### Result with our three social networks
+We execute our scripts on the available data. The database is accessing following this [link](http://console.neo4j.org/r/z9o4nf) (because of the large amount of data, the heroku server from neo4j is crashing... All the graph is save for you into the output_graph_request.neo4j file). Here is the graph combining facebook, google+ and linkedin :
+![Social graph](../Rendu/images/GraphRelations.png)
