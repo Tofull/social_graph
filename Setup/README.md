@@ -34,7 +34,7 @@ CREATE (n)-[:KNOWS {network: 'linkedin', relation: 'en relation'}] ->(m)
 
 ## Tests
 
-So far, no graphs :
+### No graphs
 
 ``` sql
 MATCH ( person {name: 'roger'})-[:KNOWS]->(someone) 
@@ -48,3 +48,13 @@ match (n)-[k:KNOWS]-(m) WHERE  k.network='google+' and k.relation='famille' RETU
 ```
 > all relationships labeled with *google+* and *famille*
 
+### With graph
+
+``` sql
+MATCH (n1)-[r]->(n2) WHERE n1.name='joe' 
+RETURN r, n1, n2
+```
+> all relationships with *joe*
+
+The output table is correct but not the graph :
+![pic](WhoJoeKnows.png)
