@@ -18,6 +18,8 @@ Tools :
 3. Run python script `python3 importdata.py`
 4. Test with query : `MATCH ( person {name: 'roger'})-[:KNOWS]->(someone) RETURN person.name, someone.name` on webpage
 
+> ATTENTION : drop database before **re**launching the python script (directly in the databse folder, with `rm -r`)
+
 ## Data import
 
 All 3 social network files are imported. Then all persons are imported as **nodes**, eg.:
@@ -54,7 +56,20 @@ match (n)-[k:KNOWS]-(m) WHERE  k.network='google+' and k.relation='famille' RETU
 MATCH (n1)-[r]->(n2) WHERE n1.name='joe' 
 RETURN r, n1, n2
 ```
-> all relationships with *joe*
+> all relationships from *joe*
 
-The output table is correct but not the graph :
+The graph :
 ![pic](WhoJoeKnows.png)
+
+
+``` sql
+MATCH (n1)-[r]-(n2) WHERE n1.name='joe' 
+RETURN r, n1, n2
+```
+> all relationships with *joe* either as n1 or n2 (bidirectionnal query)
+
+The graph :
+![pic](JoesRelations.png)
+
+There is one redundancy *Joe and Robert* :
+![pic](JoeAndRobert.png)
