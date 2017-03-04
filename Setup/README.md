@@ -46,5 +46,5 @@ RETURN person.name, someone.name
 ``` sql
 match (n)-[k:KNOWS]-(m) WHERE  k.network='google+' and k.relation='famille' RETURN n.name, k.network, k.relation, m.name
 ```
-> all relationship labeled with *google+* and *famille*
+> all relationships labeled with *google+* and *famille*
 
