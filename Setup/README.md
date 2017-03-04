@@ -7,9 +7,13 @@ Tools :
 * python libraries : **pandas**, **py2neo** (available through **pip3**)
 
 1. Launch neo4j server : `/home/nil/Utils/neo4j-community-3.1.1/bin/neo4j console`
+
 > replace with your own path
-2. Check server on web client : http://localhost:7474/browser/
+
+2. Check server on web client : <http://localhost:7474/browser/>
+
 > change password to *social*
+
 3. run python script `python3 importdata.py`
 4. Test with query : `MATCH ( person {name: 'roger'})-[:KNOWS]->(someone) RETURN person.name, someone.name` on webpage
 
