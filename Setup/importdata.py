@@ -83,29 +83,29 @@ def connect_to_db():
     return session
     '''
     authenticate("localhost:7474", "neo4j", "social")
-    g = Graph()
-    return g
+    graph = Graph()
+    return graph
 
 
 
 if __name__ == "__main__":
-    path = sys.argv[1:][0]
-    print(path)
-    if len(path) == 0:    # TODO check
-        path = PATH
-    df_social = load_social_network_data(path)
+    datapath = sys.argv[1:][0]
+    print(datapath)
+    if len(datapath) == 0:    # TODO check
+        datapath = PATH
+    df_social = load_social_network_data(datapath)
     if VERBOSE:
         print("Social relationships")
         print(df_social.describe())
-    create_network_queries = build_query_network(df_social)
-    create_users_queries = build_query_users(df_social)
-    create_relations = build_query_relationship(df_social)
+    list_network_queries = build_query_network(df_social)
+    list_users_queries = build_query_users(df_social)
+    list_relations = build_query_relationship(df_social)
     #session = connect_to_db()
     #result = session.run
     graph = connect_to_db()
-    for query in create_users_queries:
+    for query in list_users_queries:
         graph.run(query)
-    for query in create_relations:
+    for query in list_relations:
         graph.run(query)
     print("The end.")
 

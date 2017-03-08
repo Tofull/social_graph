@@ -10,6 +10,10 @@
 
 * [py2neo documentation](http://py2neo.org/2.0/)
 
+## Queries
+
+* [Community detection] (http://perso.crans.org/aynaud/communities/)
+
 
 ## Linkedin API
 

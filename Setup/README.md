@@ -7,18 +7,20 @@ Tools :
 * **python 3.4** (default on RPI)
 * python libraries : **pandas**, **py2neo** (available through **pip3**)
 
-1. Launch neo4j server : `/home/nil/Utils/neo4j-community-3.1.1/bin/neo4j console`
+## Step by step
+
+1. Launch neo4j server : `/home/nil/Utils/neo4j-community-3.1.1/bin/neo4j start`
 
 > replace with your own path
 
 2. Check server on web client : <http://localhost:7474/browser/>
 
-> change password to *social*
+> change password to *social* (this is used in the python script)
 
-3. Run python script `python3 importdata.py`
+3. Run python script `python3 importdata.py ../data/`
 4. Test with query : `MATCH ( person {name: 'roger'})-[:KNOWS]->(someone) RETURN person.name, someone.name` on webpage
 
-> ATTENTION : drop database before **re**launching the python script (directly in the databse folder, with `rm -r`)
+> ATTENTION : drop database before **re**launching the python script (directly in the database folder, with `rm -rf data/database/graph.db`)
 
 ## Data import
 
@@ -71,5 +73,5 @@ RETURN r, n1, n2
 The graph :
 ![pic](JoesRelations.png)
 
-There is one redundancy *Joe and Robert* :
+There is one redundancy *joe* and *robert* :
 ![pic](JoeAndRobert.png)
