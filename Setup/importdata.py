@@ -43,7 +43,7 @@ def create_relation_to_network(network, person):
 def create_relation_between_persons(network, name1, name2, relation):
     return "match (n:Person),(m:Person) " \
            "where n.name='" + name1 + "' and m.name='" + name2 + "' " \
-           "create (n)-[:KNOWS {network: '"+network+"', relation: '" + relation + "'}] ->(m)\n"
+           "create (n)-[:"+network+" { relation: '" + relation + "'}] ->(m)\n"
 
 
 def build_query_network(df, verbose=VERBOSE): # useful ?
@@ -72,7 +72,7 @@ def build_query_users(df, verbose=VERBOSE):
 def build_query_relationship(df, verbose=VERBOSE):
 #    for index, row in df.iterrows():
 #        print(row[1])
-    queries = [create_relation_between_persons(row[0], row[1], row[2], row[3]) for index, row in df.iterrows()]
+    queries = [create_relation_between_persons(row[0].upper().replace("+", ""), row[1], row[2], row[3]) for index, row in df.iterrows()]
     return queries
 
 
