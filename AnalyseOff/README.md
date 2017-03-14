@@ -17,7 +17,7 @@ where NETWORK is one of {FACEBOOK, LINKEDIN, GOOGLE}
 
 There is a lot of duplicates :
 
-* `anastasia` is linked 3 times wia facebook to `remy`
+* `anastasia` is linked 3 times via facebook to `remy`
 
 This could lead to a false detection of an influent member of the community.
 The input data should be cleaned before the database injection.
@@ -38,7 +38,9 @@ The input data should be cleaned before the database injection.
 
 ### Persons belonging to several network (1, 2 or 3)
 
-`MATCH (n)-[k]->(m) WHERE COUNT(DISTINCT k)==3 RETURN COUNT(n)
+`MATCH (n)-[k]->(m) WHERE COUNT(DISTINCT k)=3 RETURN COUNT(n)`
+
+> not working
 
 ### Distribution of the number of relationships / persons
 
