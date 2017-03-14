@@ -36,7 +36,7 @@ The input data should be cleaned before the database injection.
 
 ![p](perRepartition.png)
 
-### Persons belonging to several network (1, 2 or 3)
+### Persons belonging to several networks (1, 2 or 3)
 
 `MATCH (n)-[k]->(m) WHERE COUNT(DISTINCT k)=3 RETURN COUNT(n)`
 
