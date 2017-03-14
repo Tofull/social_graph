@@ -15,7 +15,7 @@ Tools :
 
 2. Check server on web client : <http://localhost:7474/browser/>
 
-> change password to *social* (this is used in the python script)
+> change password to *social* (this is used in the python script): `:server change-password` on the web interface (neo4j is the default password)
 
 3. Run python script `python3 importdata.py ../data/`
 4. Test with query : `MATCH ( person {name: 'roger'})-[:KNOWS]->(someone) RETURN person.name, someone.name` on webpage
