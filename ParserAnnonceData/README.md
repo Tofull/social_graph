@@ -27,7 +27,7 @@ By the way, our solution is based on unsupervised classification (kmeans-cluster
 
 
 ## Openings
-We would love to use syntax-logic algorithms to improve the performances and robustness of the classification. 
+We would love to use syntax-logic algorithms to improve the performances and robustness of the classification. Why not deep learning...
 
 # Inspirations 
 - [Sentiment based on syntax-logic (Nlkt + Scikit)](http://bbengfort.github.io/tutorials/2016/05/19/text-classification-nltk-sckit-learn.html)
