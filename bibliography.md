@@ -14,6 +14,9 @@
 
 * [Community detection] (http://perso.crans.org/aynaud/communities/)
 
+## Visualisation 
+
+* [Cypher + D3.js] (https://dzone.com/articles/network-visualization-using) (! 2012 !)
 
 ## Linkedin API
 
