@@ -55,7 +55,10 @@ The input data should be cleaned before the database injection.
 
 ### Distribution of relationships (anytype)
 
-`MATCH (n) RETURN n, SIZE((n)-[:FACEBOOK|:GOOGLE]-()) ORDER BY SIZE((n)-[:FACEBOOK|:GOOGLE|:LINKEDIN]->()) DESC`
+`MATCH (n) RETURN n, SIZE((n)-[:FACEBOOK|:GOOGLE]-()) ORDER BY SIZE((n)-[:FACEBOOK|:GOOGLE|:LINKEDIN]-()) DESC`
 
 ![p](relPerPersonsAny.png)
 
+Simpler version :`MATCH (n:Person)-[k]-(m)  RETURN n, count(k) ORDER BY count(k) DESC`
+
+> **BEWARE** Results are different !!!! To be continued
