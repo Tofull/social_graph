@@ -5,7 +5,7 @@ Tools :
 * **java8** (not 9!)
 * **neo4j** community edition
 * **python 3.4** (default on RPI)
-* python libraries : **pandas**, **py2neo** (available through **pip3**)
+* python libraries : **pandas**, **py2neo v3** (available through **pip3**, [doc](http://py2neo.org/v3/index.html))
 
 ## Step by step
 

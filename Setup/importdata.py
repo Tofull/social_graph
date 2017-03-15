@@ -77,11 +77,6 @@ def build_query_relationship(df, verbose=VERBOSE):
 
 
 def connect_to_db():
-    '''
-    driver = GraphDatabase.driver('bolt://localhost', auth=basic_auth("neo4j", "social"))
-    session= driver.session()
-    return session
-    '''
     authenticate("localhost:7474", "neo4j", "social")
     graph = Graph()
     return graph

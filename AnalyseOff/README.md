@@ -5,7 +5,10 @@ This analysis could be done with python, cypher queries and matplotlib for outpu
 * Pie charts : number of relationships in a network, ...
 * Histograms : number of relationships per persons, ...
 
-Next would be to transform de query result into a json description compatible with D3.js.
+Next would be to transform thee query result into a json description compatible with D3.js.
+
+For an online presentation of the results, see : <https://github.com/Nilct/Neo4jPythonVega> (work in progress)
+
 
 ## Remarks
 
